@@ -5,36 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kyle Chin's Portfolio</title>
     <link rel="stylesheet" href="./style.css" />
+    <meta name="description" content="Hello! I'm Kyle Chin, a strategist, designer, and developer. Contact me today to start your next web project." />
   </head>
   <body>
     <header class="primary-header">
-      <a href="./index.html">
-        <div class="site-logo">
-          <div class="headshot-wrapper">
-            <figure><img class="headshot" src="./images/kyle-headshot-square.jpg" alt="Kyle Chin Headshot" width="75" height="75" /></figure>
+      <div class="header-inner">
+        <a class="site-logo" href="./index.html">
+          <div class="logo-inner">
+            <div class="headshot">
+              <figure class="headshot"><img src="./images/kyle-headshot-square.jpg" alt="Kyle Chin Headshot" width="80" height="80" /></figure>
+            </div>
+            <div class="site-name">
+              <p>Kyle Chin</p>
+            </div>
           </div>
-          <div class="site-name">
-            <h1>Kyle Chin</h1>
-          </div>
+        </a>
+        <nav id="siteNav" class="site-nav">
+          <ul class="primary-nav">
+            <li class="nav-item">
+              <a href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a href="#work">Work</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about">About</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="cta">
+          <a class="primary-nav-cta-btn" id="primary-nav-cta-btn" href="#contact">Say Hello</a>
         </div>
-      </a>
-
-      <nav id="siteNav" class="site-nav">
-        <ul class="primary-nav">
-          <li class="nav-item">
-            <a href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a href="#work">Work</a>
-          </li>
-          <li class="nav-item">
-            <a href="#about">About</a>
-          </li>
-          <li class="nav-item btn">
-            <a href="#say-hello">Say Hello</a>
-          </li>
-        </ul>
-      </nav>
+      </div>
     </header>
     <main>
       <h2>Hi, I'm Kyle, a curious and passionate web developer.</h2>
