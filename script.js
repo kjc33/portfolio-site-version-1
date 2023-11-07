@@ -3,7 +3,17 @@ const mobileNavItems = document.getElementById("mobileMenuNavItems");
 const mobileSiteNav = document.getElementById("mobileMenuNav");
 const mobileMenuCloseBtn = document.getElementById("closeBtn");
 
-// Mobile Menu Nav Items
+// Mobile Menu Nav Items - Adds Class to Mobile Menu Flyout For Smooth Transition
+
+mobileMenuBurger.addEventListener("click", toggleMobileMenu);
+
+function toggleMobileMenu() {
+  if (window.innerWidth <= 1024) {
+    mobileNavItems.classList.toggle("active");
+  }
+}
+
+// Mobile Menu Flyout
 
 mobileMenuBurger.addEventListener("click", displayMobileMenu);
 
