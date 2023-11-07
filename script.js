@@ -8,12 +8,12 @@ const mobileMenuCloseBtn = document.getElementById("closeBtn");
 mobileMenuBurger.addEventListener("click", displayMobileMenu);
 
 function displayMobileMenu() {
-    // Shows Full Screen Mobile Menu
-    mobileNavItems.style.display = "block";
+  // Shows Full Screen Mobile Menu
+  mobileNavItems.style.display = "block";
 
-    // Adds and Displays Navigation
-    mobileNavItems.appendChild(mobileSiteNav);
-    mobileSiteNav.style.display = "flex";
+  // Adds and Displays Navigation
+  mobileNavItems.appendChild(mobileSiteNav);
+  mobileSiteNav.style.display = "flex";
 }
 
 // Mobile Menu Close Button
@@ -21,5 +21,5 @@ function displayMobileMenu() {
 mobileMenuCloseBtn.addEventListener("click", closeMobileMenu);
 
 function closeMobileMenu() {
-    mobileNavItems.style.display = "none";
+  mobileNavItems.style.display = "none";
 }

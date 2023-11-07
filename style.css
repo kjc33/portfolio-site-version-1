@@ -49,6 +49,11 @@ header {
   height: 80px;
 }
 
+.headshot figure {
+  width: 80px;
+  height: 80px;
+}
+
 .site-name {
   font-size: 1.5rem;
   font-weight: 500;
@@ -147,28 +152,30 @@ header {
   color: #292929;
 }
 
+.mobile-menu-nav-items .site-nav .primary-nav .nav-item a:hover,
+.mobile-menu-nav-items .mobile-close-btn .close-btn:hover .fa-solid.fa-xmark {
+  color: #ffffff;
+}
+
 .mobile-menu-nav-items .site-nav {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
 /* Primary Nav - Mobile Close Button */
 
 .mobile-menu-nav-items .mobile-close-btn .close-btn {
-    position: absolute;
-    top: 50px;
-    right: 30px;
-    width: 30px;
-    height: 30px;
-    background-color: #ffffff;
-    border: none;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.mobile-menu-nav-items .mobile-close-btn .close-btn::before {
-    width: 20px;
-    height: 3px;
-    background-color: #000000;
-    border-radius: 5px;
-    transform: rotate(-90deg);
+.fa-solid.fa-xmark {
+  font-size: 30px;
 }
 
 /* Primary Nav - CTA Button */
@@ -240,6 +247,14 @@ main {
   /* Primary Menu - Nav Items */
   .mobile-menu-nav-items .site-nav .primary-nav .nav-item a {
     font-size: 3rem;
+  }
+  /* Primary Menu - Mobile Nav Close Button */
+  .mobile-menu-nav-items .mobile-close-btn .close-btn {
+    top: 50px;
+    right: 50px;
+  }
+  .fa-solid.fa-xmark {
+    font-size: 40px;
   }
 }
 
