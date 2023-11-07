@@ -17,7 +17,6 @@
 }
 
 .header-inner {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -97,6 +96,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   gap: 8px;
+  cursor: pointer;
 }
 
 .mobile-menu-burger .top-bar,
@@ -120,9 +120,56 @@ header {
   width: 20px;
 }
 
-/* Primary Nav - Full Screen Mobile Menu */
+/* Primary Nav - Mobile Menu Nav Items */
 
-.primary-header .header-inner 
+.primary-header .header-inner .mobile-menu .mobile-menu-nav-items {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #22e52e;
+  z-index: 999999;
+}
+
+.mobile-menu-nav-items {
+  padding: 50px 30px;
+}
+
+.mobile-menu-nav-items .site-nav .primary-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-menu-nav-items .site-nav .primary-nav .nav-item a {
+  color: #292929;
+}
+
+.mobile-menu-nav-items .site-nav {
+    margin-top: 80px;
+}
+
+/* Primary Nav - Mobile Close Button */
+
+.mobile-menu-nav-items .mobile-close-btn .close-btn {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border: none;
+}
+
+.mobile-menu-nav-items .mobile-close-btn .close-btn::before {
+    width: 20px;
+    height: 3px;
+    background-color: #000000;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+}
 
 /* Primary Nav - CTA Button */
 
@@ -161,10 +208,21 @@ main {
 
 /* Media Queries */
 
+@media screen and (min-width: 350px) {
+  /* Primary Menu - Nav Items */
+  .mobile-menu-nav-items .site-nav .primary-nav .nav-item a {
+    font-size: 1.5rem;
+  }
+}
+
 @media screen and (min-width: 500px) {
   /* Headshot/Logo and Site Name */
   .headshot {
     display: block;
+  }
+  /* Primary Menu - Nav Items */
+  .mobile-menu-nav-items .site-nav .primary-nav .nav-item a {
+    font-size: 2rem;
   }
 }
 
@@ -176,18 +234,31 @@ main {
   .primary-header .cta {
     display: block;
   }
+  .mobile-menu-nav-items {
+    padding: 80px 50px;
+  }
+  /* Primary Menu - Nav Items */
+  .mobile-menu-nav-items .site-nav .primary-nav .nav-item a {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  /* Primary Menu - Nav Items */
+  .mobile-menu-nav-items .site-nav .primary-nav .nav-item a {
+    font-size: 4rem;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    
-    .mobile-menu {
-        display: block;
-        margin-left: auto;
-    }
+  .mobile-menu {
+    display: block;
+    margin-left: auto;
+  }
 
-    .primary-header .header-inner .cta {
-        margin-left: 0;
-      }
+  .primary-header .header-inner .cta {
+    margin-left: 0;
+  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -208,5 +279,11 @@ main {
 
   .primary-header .header-inner .cta {
     margin-left: auto;
+  }
+
+  /* Primary Nav - CTA Menu Item */
+
+  .menu-cta {
+    display: none;
   }
 }
