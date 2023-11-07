@@ -1,6 +1,6 @@
 const mobileMenuBurger = document.getElementById("mobileMenuBurger");
 const mobileNavItems = document.getElementById("mobileMenuNavItems");
-const mobileSiteNav = document.getElementById("siteNav");
+const mobileSiteNav = document.getElementById("mobileMenuNav");
 const mobileMenuCloseBtn = document.getElementById("closeBtn");
 
 // Mobile Menu Nav Items
@@ -8,18 +8,24 @@ const mobileMenuCloseBtn = document.getElementById("closeBtn");
 mobileMenuBurger.addEventListener("click", displayMobileMenu);
 
 function displayMobileMenu() {
-  // Shows Full Screen Mobile Menu
-  mobileNavItems.style.display = "block";
+  if (window.innerWidth <= 1024) {
+    // Displays Full Screen Mobile Menu Flyout
+    mobileNavItems.style.display = "block";
 
-  // Adds and Displays Navigation
-  mobileNavItems.appendChild(mobileSiteNav);
-  mobileSiteNav.style.display = "flex";
+    // Displays Close Button in Mobile Menu Flyout
+    mobileNavItems.appendChild(mobileMenuCloseBtn);
+
+    // Displays Mobile Navigation in Mobile Menu Flyout
+    mobileSiteNav.style.display = "flex";
+  }
 }
 
-// Mobile Menu Close Button
+// Hides Mobile Menu Flyout on Close Button Click
 
 mobileMenuCloseBtn.addEventListener("click", closeMobileMenu);
 
 function closeMobileMenu() {
-  mobileNavItems.style.display = "none";
+  if (window.innerWidth <= 1024) {
+    mobileNavItems.style.display = "none";
+  }
 }
