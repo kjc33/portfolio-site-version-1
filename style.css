@@ -50,8 +50,8 @@
   height: 80px;
 }
 
-.site-name {
-  font-size: 1.5rem;
+.site-name p {
+  font-size: 1.4rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -66,11 +66,14 @@
 
 .nav-item {
   display: inline-block;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.nav-item a {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
 }
 
 .nav-item a,
@@ -155,11 +158,17 @@
 
 .mobile-menu-nav .mobile-menu-nav-items .mobile-menu-nav-list-items .nav-item a {
   color: #292929;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.mobile-menu-nav .mobile-menu-nav-items .close-btn .fa-solid.fa-xmark {
+  color: #292929;
 }
 
 .mobile-menu-nav .mobile-menu-nav-items .mobile-menu-nav-list-items .nav-item a:hover,
 .mobile-menu-nav .mobile-menu-nav-items .close-btn:hover .fa-solid.fa-xmark {
-  color: #ffffff;
+  color: #000000;
 }
 
 .mobile-menu-nav-items .mobile-menu-nav-list-items {
@@ -223,10 +232,33 @@ footer {
   padding: 50px 30px;
 }
 
+.inner-container {
+  position: relative;
+}
+
+/* Layout */
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
 .max-width {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
+}
+
+/* Text */
+
+p {
+  font-size: 1rem;
+  letter-spacing: 2px;
 }
 
 /* Outline Heading */
@@ -234,24 +266,89 @@ footer {
 .outline-heading-large {
   font-size: 1.75rem;
   text-transform: uppercase;
-  -webkit-text-stroke: #ffffff;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ffffff;
   color: transparent;
-  letter-spacing: 2px;
+  letter-spacing: 8px;
+  padding-bottom: 50px;
   width: 50%;
+}
+
+.hero-subhead p:first-child {
+  padding-bottom: 10px;
+}
+
+/* Light Font */
+
+.hero-subhead .light-font {
+  font-size: 0.75rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #22e52e;
+}
+
+/* Vertical Text */
+
+.vertical {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(-180deg);
+  writing-mode: vertical-lr;
+  gap: 10px;
+}
+
+.location p {
+  font-size: 0.875rem;
+  font-weight: 200;
+  color: rgba(245, 245, 245, 0.5);
+  white-space: nowrap;
 }
 
 /* Media Queries */
 
+@media screen and (max-width: 300px) {
+  /* Outline Heading */
+  .outline-heading-large {
+    font-size: 1.5rem;
+    -webkit-text-stroke-width: 0;
+    -wekkit-text-stroke-color: transparent;
+    color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  /* Outline Heading */
+  .outline-heading-large {
+    letter-spacing: 4px;
+    padding-bottom: 30px;
+  }
+}
+
 @media screen and (min-width: 350px) {
   /* Primary Menu - Nav Items */
   .mobile-menu-nav-items .mobile-menu-nav-list-items .nav-item a {
-    font-size: 1.5rem;
+    font-size: 2.25rem;
   }
-  /* outline Heading */
+  /* Outline Heading */
   .outline-heading-large {
     font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* Vertical Text */
+  .vertical {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* Outline Heading */
+  .outline-heading-large {
+    -webkit-text-stroke-width: 0;
+    -wekkit-text-stroke-color: transparent;
+    color: #ffffff;
   }
 }
 
@@ -262,16 +359,23 @@ footer {
   }
   /* Primary Menu - Nav Items */
   .mobile-menu-nav-items .mobile-menu-nav-list-items .nav-item a {
-    font-size: 2rem;
+    font-size: 3.5rem;
   }
-    /* outline Heading */
-    .outline-heading-large {
-        font-size: 3rem;
-      }
+  /* Outline Heading */
+  .outline-heading-large {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 641px) {
+    /* Vertical Text */
+    .vertical {
+      bottom: -50px;
+    }
 }
 
 @media screen and (min-width: 641px) {
-      /* outline Heading */
+  /* Outline Heading */
   .outline-heading-large {
     font-size: 4rem;
   }
@@ -290,7 +394,7 @@ footer {
   }
   /* Primary Menu - Nav Items */
   .mobile-menu-nav-items .mobile-menu-nav-list-items .nav-item a {
-    font-size: 3rem;
+    font-size: 5rem;
   }
   /* Primary Menu - Mobile Nav Close Button */
   .mobile-menu-nav-items .close-btn {
@@ -301,24 +405,22 @@ footer {
     font-size: 40px;
   }
   section,
-  footer {
+  footer,
+  .primary-header .header-inner .mobile-menu .mobile-menu-nav .mobile-menu-nav-items {
     padding: 80px 50px;
   }
-    /* outline Heading */
-    .outline-heading-large {
-        font-size: 5rem;
-      }
+  /* Outline Heading */
+  .outline-heading-large {
+    font-size: 5rem;
+  }
 }
 
 @media screen and (min-width: 880px) {
-  /* Primary Menu - Nav Items */
-  .mobile-menu-nav-items .mobile-menu-nav-list-items .nav-item a {
-    font-size: 4rem;
+  /* Primary Menu - Nav Items & Outline Heading */
+  .mobile-menu-nav-items .mobile-menu-nav-list-items .nav-item a,
+  .outline-heading-large {
+    font-size: 6rem;
   }
-    /* outline Heading */
-    .outline-heading-large {
-        font-size: 6rem;
-      }
 }
 
 @media screen and (max-width: 1024px) {
@@ -350,8 +452,15 @@ footer {
   .primary-header .header-inner .cta {
     margin-left: auto;
   }
-    /* outline Heading */
-    .outline-heading-large {
-      font-size: 8rem;
-    }
+  /* Outline Heading */
+  .outline-heading-large {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  /* Outline Heading */
+  .outline-heading-large {
+    font-size: 8rem;
+  }
 }

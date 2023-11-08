@@ -20,13 +20,11 @@ mobileMenuBurger.addEventListener("click", displayMobileMenu);
 function displayMobileMenu() {
   if (window.innerWidth <= 1024) {
     // Displays Full Screen Mobile Menu Flyout
-    mobileNavItems.style.display = "block";
-
-    // Displays Close Button in Mobile Menu Flyout
-    mobileNavItems.appendChild(mobileMenuCloseBtn);
-
-    // Displays Mobile Navigation in Mobile Menu Flyout
-    mobileSiteNav.style.display = "flex";
+    if (mobileNavItems) {
+      mobileNavItems.style.display = "block";
+      mobileNavItems.appendChild(mobileMenuCloseBtn);
+      mobileSiteNav.style.display = "flex";
+    }
   }
 }
 
@@ -36,6 +34,9 @@ mobileMenuCloseBtn.addEventListener("click", closeMobileMenu);
 
 function closeMobileMenu() {
   if (window.innerWidth <= 1024) {
-    mobileNavItems.style.display = "none";
+    // Hides Mobile Menu Flyout
+    if (mobileNavItems) {
+      mobileNavItems.style.display = "none";
+    }
   }
 }
