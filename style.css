@@ -264,14 +264,14 @@ p {
 /* Outline Heading */
 
 .outline-heading-large {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+  -webkit-text-stroke-width: 0;
+  -wekkit-text-stroke-color: transparent;
+  color: #ffffff;
   text-transform: uppercase;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #ffffff;
-  color: transparent;
-  letter-spacing: 8px;
-  padding-bottom: 50px;
+  letter-spacing: 4px;
   width: 50%;
+  padding-bottom: 30px;
 }
 
 .hero-subhead p:first-child {
@@ -290,6 +290,7 @@ p {
 /* Vertical Text */
 
 .vertical {
+  display: none;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -298,6 +299,8 @@ p {
   gap: 10px;
 }
 
+/* Location */
+
 .location p {
   font-size: 0.875rem;
   font-weight: 200;
@@ -305,25 +308,18 @@ p {
   white-space: nowrap;
 }
 
+/* Job Titles */
+
+.job-titles .inner-container .job-titles.bg {
+  background-image: url(./images/business-strategy.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+
 /* Media Queries */
-
-@media screen and (max-width: 300px) {
-  /* Outline Heading */
-  .outline-heading-large {
-    font-size: 1.5rem;
-    -webkit-text-stroke-width: 0;
-    -wekkit-text-stroke-color: transparent;
-    color: #ffffff;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  /* Outline Heading */
-  .outline-heading-large {
-    letter-spacing: 4px;
-    padding-bottom: 30px;
-  }
-}
 
 @media screen and (min-width: 350px) {
   /* Primary Menu - Nav Items */
@@ -333,13 +329,16 @@ p {
   /* Outline Heading */
   .outline-heading-large {
     font-size: 2rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffffff;
+    color: transparent;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 400px) {
   /* Vertical Text */
   .vertical {
-    display: none;
+    display: block;
   }
 }
 
