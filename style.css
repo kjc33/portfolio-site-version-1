@@ -78,6 +78,7 @@
 .primary-nav-cta-btn {
   color: #ffffff;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .nav-item a:hover {
@@ -217,14 +218,28 @@ body {
   color: #f5f5f5;
 }
 
-section, footer {
-    padding: 50px 30px;
+section,
+footer {
+  padding: 50px 30px;
 }
 
 .max-width {
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Outline Heading */
+
+.outline-heading-large {
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  -webkit-text-stroke: #ffffff;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffff;
+  color: transparent;
+  letter-spacing: 2px;
+  width: 50%;
 }
 
 /* Media Queries */
@@ -233,6 +248,10 @@ section, footer {
   /* Primary Menu - Nav Items */
   .mobile-menu-nav-items .mobile-menu-nav-list-items .nav-item a {
     font-size: 1.5rem;
+  }
+  /* outline Heading */
+  .outline-heading-large {
+    font-size: 2rem;
   }
 }
 
@@ -244,6 +263,17 @@ section, footer {
   /* Primary Menu - Nav Items */
   .mobile-menu-nav-items .mobile-menu-nav-list-items .nav-item a {
     font-size: 2rem;
+  }
+    /* outline Heading */
+    .outline-heading-large {
+        font-size: 3rem;
+      }
+}
+
+@media screen and (min-width: 641px) {
+      /* outline Heading */
+  .outline-heading-large {
+    font-size: 4rem;
   }
 }
 
@@ -270,6 +300,14 @@ section, footer {
   .fa-solid.fa-xmark {
     font-size: 40px;
   }
+  section,
+  footer {
+    padding: 80px 50px;
+  }
+    /* outline Heading */
+    .outline-heading-large {
+        font-size: 5rem;
+      }
 }
 
 @media screen and (min-width: 880px) {
@@ -277,6 +315,10 @@ section, footer {
   .mobile-menu-nav-items .mobile-menu-nav-list-items .nav-item a {
     font-size: 4rem;
   }
+    /* outline Heading */
+    .outline-heading-large {
+        font-size: 6rem;
+      }
 }
 
 @media screen and (max-width: 1024px) {
@@ -308,4 +350,8 @@ section, footer {
   .primary-header .header-inner .cta {
     margin-left: auto;
   }
+    /* outline Heading */
+    .outline-heading-large {
+      font-size: 8rem;
+    }
 }
