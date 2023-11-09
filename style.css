@@ -232,12 +232,16 @@ html {
 
 body {
   background-color: #1f1f1f;
-  color: #f5f5f5;
+  color: #999999;
 }
 
 section,
 footer {
   padding: 50px 30px;
+}
+
+.no-bottom-padding {
+  padding: 50px 30px 0 30px;
 }
 
 .image-separator {
@@ -254,11 +258,24 @@ footer {
 }
 
 .custom-list li:not(:last-child) {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .skills-list .custom-list li {
   font-size: 1rem;
+}
+
+body main section a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: solid 2px #ffffff;
+  padding-bottom: 1px;
+}
+
+body main section a:hover {
+  color: #22e52e;
+  border-bottom-color: #22e52e;
+  transition: 0.4s;
 }
 
 /* Layout */
@@ -291,33 +308,42 @@ footer {
   margin: 0 auto;
 }
 
-.medium-width {
+.large-width {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
+.medium-width {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 /* Text */
 
-p, li {
+p,
+li {
   font-size: 1rem;
   letter-spacing: 2px;
 }
 
 .green-accent {
-  color: #22E52E;
+  color: #22e52e;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   letter-spacing: 4px;
   text-transform: uppercase;
 }
 
 .primary-h2 {
   font-size: 1.5rem;
-}
-
-.skills .primary-h2 {
   padding-bottom: 30px;
 }
 
@@ -347,6 +373,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #22e52e;
 }
 
+/* White Text */
+
+.white {
+  color: #ffffff;
+}
+
 /* Vertical Text */
 
 .vertical {
@@ -368,22 +400,34 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
 }
 
+/* Large Body Text */
+
+.large-text p {
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+
+.large-text p:first-child {
+  margin-bottom: 30px;
+}
+
 /* Image Separator */
 
 .image-separator {
   margin-bottom: 15px;
 }
 
-/* Job Titles */
+/* Image Separator */
 
 .image-separator .inner-container {
-  width: 70%;
+  width: 75%;
   margin-left: auto;
 }
 
 .image-separator .inner-container .image-separator-bg img {
   width: 100%;
   height: auto;
+  max-height: 750px;
 }
 
 .image-separator-bg:after {
@@ -394,8 +438,41 @@ h1, h2, h3, h4, h5, h6 {
   left: -20px;
   width: 100%;
   height: calc(100% - 10px);
-  border: solid 1px #22E52E;
+  border: solid 1px #22e52e;
   z-index: -1;
+}
+
+/* Job Cards */
+
+.job-card {
+  flex: 1;
+  justify-content: space-between;
+  height: 350px;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  padding: 30px;
+}
+
+.job-card .percentage {
+  font-size: 1.5rem;
+  color: #22e52e;
+}
+
+.job-card h3 {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.job-card:hover {
+  background-color: #22e52e;
+}
+
+.job-card:hover h3,
+.job-card:hover .pagination {
+  color: #000000;
+}
+
+.job-card:hover .percentage {
+  color: #f5f5f5;
 }
 
 /* Media Queries */
@@ -413,6 +490,10 @@ h1, h2, h3, h4, h5, h6 {
     color: transparent;
   }
   .primary-h2 {
+    font-size: 2rem;
+  }
+  /* Job Cards */
+  .job-card .percentage {
     font-size: 2rem;
   }
 }
@@ -449,8 +530,16 @@ h1, h2, h3, h4, h5, h6 {
   .primary-h2 {
     font-size: 2.5rem;
   }
-  .skills-list .custom-list li {
+  .skills-list .custom-list li,
+  .large-text p {
     font-size: 1.2rem;
+  }
+  /* Job Cards */
+  .job-card .percentage {
+    font-size: 3rem;
+  }
+  .job-card {
+    padding: 50px;
   }
 }
 
@@ -465,6 +554,10 @@ h1, h2, h3, h4, h5, h6 {
   .location p {
     font-size: 0.875rem;
   }
+  /* Job Cards */
+  .job-card .percentage {
+    font-size: 4rem;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -473,6 +566,9 @@ h1, h2, h3, h4, h5, h6 {
   }
   .skills .large-gap {
     gap: 0;
+  }
+  .job-titles .large-gap {
+    gap: 30px;
   }
 }
 
@@ -500,7 +596,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 40px;
   }
 
-  p, li {
+  p,
+  li {
     font-size: 1.2rem;
   }
 
@@ -514,6 +611,10 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 0 0 50px;
   }
 
+  .no-bottom-padding {
+    padding: 80px 50px 0 50px;
+  }
+
   /* Outline Heading */
   .outline-heading-large {
     font-size: 5rem;
@@ -525,7 +626,11 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 0;
   }
   .skills .inner-container.large-gap {
-    gap: 80px
+    gap: 80px;
+  }
+  /* Job Cards */
+  .job-card .percentage {
+    font-size: 2rem;
   }
 }
 
@@ -544,8 +649,13 @@ h1, h2, h3, h4, h5, h6 {
   .primary-h2 {
     font-size: 4rem;
   }
-  .skills-list .custom-list li {
+  .skills-list .custom-list li,
+  .large-text p {
     font-size: 1.4rem;
+  }
+  /* Job Cards */
+  .job-card .percentage {
+    font-size: 2.5rem;
   }
 }
 
@@ -560,6 +670,9 @@ h1, h2, h3, h4, h5, h6 {
   }
   .site-nav {
     display: none;
+  }
+  .flex-column-tablet {
+    flex-direction: column;
   }
 }
 
@@ -585,12 +698,22 @@ h1, h2, h3, h4, h5, h6 {
   .primary-h2 {
     font-size: 4.5rem;
   }
-  section, 
+  section,
   footer {
-    padding: 120px 50px;
+    padding: 150px 50px;
   }
-  .skills-list .custom-list li {
+  .no-bottom-padding {
+    padding: 150px 50px 0 50px;
+  }
+  .skills-list .custom-list li,
+  .large-text p {
     font-size: 1.5rem;
+  }
+  .designer-card {
+    margin-top: 50px;
+  }
+  .developer-card {
+    margin-top: 100px;
   }
 }
 
@@ -599,13 +722,14 @@ h1, h2, h3, h4, h5, h6 {
   .outline-heading-large {
     font-size: 8rem;
   }
-  .skills-list .custom-list li {
+  .skills-list .custom-list li,
+  .large-text p {
     font-size: 1.75rem;
   }
   .skills-list {
     flex-wrap: nowrap;
   }
   .skills .inner-container.large-gap {
-    gap: 100px
+    gap: 100px;
   }
 }
