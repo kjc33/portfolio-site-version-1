@@ -525,7 +525,13 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 0;
   }
   .skills .inner-container.large-gap {
-    gap: 120px
+    gap: 80px
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .skills-list.large-gap {
+    gap: 30px;
   }
 }
 
@@ -598,5 +604,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   .skills-list {
     flex-wrap: nowrap;
+  }
+  .skills .inner-container.large-gap {
+    gap: 100px
   }
 }
