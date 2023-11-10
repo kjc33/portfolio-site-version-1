@@ -211,9 +211,6 @@ html {
 }
 
 .primary-nav-cta-btn {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
   font-size: 1.2rem;
   letter-spacing: 2px;
   color: #22e52e;
@@ -244,8 +241,12 @@ footer {
   padding: 50px 30px 0 30px;
 }
 
-.image-separator {
+.image-separator-right {
   padding: 0 0 0 30px;
+}
+
+.image-separator-left {
+  padding: 0 30px 0 0;
 }
 
 .inner-container {
@@ -265,17 +266,48 @@ footer {
   font-size: 1rem;
 }
 
-body main section a {
+.underline-link a {
   color: #ffffff;
   text-decoration: none;
   border-bottom: solid 2px #ffffff;
   padding-bottom: 1px;
 }
 
-body main section a:hover {
+.underline-link a:hover,
+.arrow-btn a:hover {
   color: #22e52e;
   border-bottom-color: #22e52e;
   transition: 0.4s;
+}
+
+.arrow-btn {
+  display: inline-block;
+  position: relative;
+  top: 30px;
+  left: 0;
+}
+
+.arrow-btn::after {
+  content: url(./images/arrow-white.svg);
+  position: absolute;
+  top: -3px;
+  right: 0;
+  width: 25px;
+  height: 20px;
+  transition: content 0.3s;
+}
+
+.arrow-btn:hover::after {
+  content: url(./images/arrow-green.svg);
+}
+
+.arrow-btn a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.5em;
+  padding-right: 40px;
 }
 
 /* Layout */
@@ -320,6 +352,26 @@ body main section a:hover {
   margin: 0 auto;
 }
 
+/* Skills - Heading with CTA Button */
+
+.heading-with-cta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+.heading-with-cta .primary-h2 {
+  padding-bottom: 0;
+}
+
+.heading-with-cta .arrow-btn {
+  top: 0;
+}
+
 /* Text */
 
 p,
@@ -360,6 +412,10 @@ h6 {
   padding-bottom: 30px;
 }
 
+.hero-subhead {
+  padding-bottom: 30px;
+}
+
 .hero-subhead p:first-child {
   padding-bottom: 10px;
 }
@@ -391,13 +447,65 @@ h6 {
   gap: 10px;
 }
 
-/* Location */
+.photo-attribution-left.vertical {
+  left: -50px;
+  right: unset;
+}
 
-.location p {
+.photo-attribution-right.vertical {
+  right: -50px;
+  left: unset;
+}
+
+/* Location & Photo Attribution*/
+
+.location p,
+.photo-attribution-left p,
+.photo-attribution-right p {
   font-size: 0.6rem;
   font-weight: 200;
   color: rgba(245, 245, 245, 0.5);
   white-space: nowrap;
+}
+
+.photo-attribution-left a,
+.photo-attribution-right a {
+  color: rgba(245, 245, 245, 0.5);
+  text-decoration: none;
+  border: none;
+}
+
+.photo-attribution-left a:hover,
+.photo-attribution-right a:hover {
+  color: #22e52e;
+}
+
+/* Arrow Dropdown */
+
+.drop-down-arrow {
+  margin-right: auto;
+}
+
+.drop-down-arrow .arrow-icon {
+  transform: rotate(90deg);
+  width: 50px;
+  height: 50px;
+  border: solid 1px #ffffff;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.drop-down-arrow .arrow-icon:hover {
+  background-color: #22e52e;
+  border-color: #22e52e;
+  content: url("./images/arrow-black.svg");
+}
+
+.drop-down-arrow a {
+  border: none;
+  padding: 0;
 }
 
 /* Large Body Text */
@@ -413,24 +521,35 @@ h6 {
 
 /* Image Separator */
 
-.image-separator {
+.image-separator-right,
+.image-separator-left {
   margin-bottom: 15px;
 }
 
 /* Image Separator */
 
-.image-separator .inner-container {
-  width: 75%;
+.image-separator-right .inner-container {
+  width: 79%;
   margin-left: auto;
 }
 
-.image-separator .inner-container .image-separator-bg img {
-  width: 100%;
-  height: auto;
-  max-height: 750px;
+.image-separator-left .inner-container {
+  width: 79%;
+  margin-right: auto;
 }
 
-.image-separator-bg:after {
+.image-separator-left .inner-container .image-separator-bg img,
+.image-separator-right .inner-container .image-separator-bg img {
+  width: 100%;
+  height: auto;
+  max-height: 850px;
+}
+
+.image-separator-bg {
+  position: relative;
+}
+
+.image-separator-right .image-separator-bg:after {
   content: "";
   display: block;
   position: absolute;
@@ -442,37 +561,67 @@ h6 {
   z-index: -1;
 }
 
+.image-separator-left .image-separator-bg:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  width: 100%;
+  height: calc(100% - 10px);
+  border: solid 1px #22e52e;
+  z-index: -1;
+}
+
 /* Job Cards */
 
 .job-card {
+  position: relative;
   flex: 1;
   justify-content: space-between;
   height: 350px;
   border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 20px;
   padding: 30px;
+}
+
+.job-titles .large-gap,
+.job-titles .inner-container {
+  gap: 30px;
+}
+
+.job-card h3 {
+  font-size: 0.8rem;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  padding-bottom: 20px;
 }
 
 .job-card .percentage {
   font-size: 1.5rem;
+  text-transform: uppercase;
   color: #22e52e;
 }
 
-.job-card h3 {
-  font-size: 1rem;
-  color: #ffffff;
+.job-card .pagination {
+  font-size: 0.8rem;
 }
 
 .job-card:hover {
   background-color: #22e52e;
 }
 
-.job-card:hover h3,
-.job-card:hover .pagination {
+.job-card:hover .percentage {
   color: #000000;
 }
 
-.job-card:hover .percentage {
-  color: #f5f5f5;
+.job-card:hover h3,
+.job-card:hover .pagination {
+  color: #ffffff;
+}
+
+.job-card:hover h3 {
+  border-bottom: solid 1px #ffffff;
 }
 
 /* Media Queries */
@@ -489,10 +638,21 @@ h6 {
     -webkit-text-stroke-color: #ffffff;
     color: transparent;
   }
+  .drop-down-arrow .arrow-icon {
+    width: 60px;
+    height: 60px;
+  }
   .primary-h2 {
     font-size: 2rem;
   }
   /* Job Cards */
+  .job-card {
+    padding: 30px;
+  }
+  .job-card h3,
+  .job-card .pagination {
+    font-size: 1rem;
+  }
   .job-card .percentage {
     font-size: 2rem;
   }
@@ -502,6 +662,18 @@ h6 {
   /* Vertical Text */
   .vertical {
     display: flex;
+  }
+  .job-card {
+    min-height: 200px;
+  }
+  .job-card .pagination {
+    right: 30px;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 767px) {
+  .job-card .pagination {
+    position: absolute;
   }
 }
 
@@ -534,12 +706,19 @@ h6 {
   .large-text p {
     font-size: 1.2rem;
   }
+  .custom-list li:not(:last-child) {
+    padding-bottom: 30px;
+  }
   /* Job Cards */
   .job-card .percentage {
     font-size: 3rem;
   }
   .job-card {
+    min-height: 275px;
     padding: 50px;
+  }
+  .job-card .pagination {
+    right: 50px;
   }
 }
 
@@ -551,7 +730,9 @@ h6 {
   .primary-h2 {
     font-size: 3rem;
   }
-  .location p {
+  .location p,
+  .photo-attribution-left p,
+  .photo-attribution-right p {
     font-size: 0.875rem;
   }
   /* Job Cards */
@@ -569,6 +750,11 @@ h6 {
   }
   .job-titles .large-gap {
     gap: 30px;
+  }
+  .about .inner-container,
+  .job-titles .inner-container,
+  .skills .inner-container {
+    max-width: 600px;
   }
 }
 
@@ -607,8 +793,12 @@ h6 {
     padding: 80px 50px;
   }
 
-  .image-separator {
+  .image-separator-right {
     padding: 0 0 0 50px;
+  }
+
+  .image-separator-left {
+    padding: 0 50px 0 0;
   }
 
   .no-bottom-padding {
@@ -628,9 +818,26 @@ h6 {
   .skills .inner-container.large-gap {
     gap: 80px;
   }
-  /* Job Cards */
-  .job-card .percentage {
-    font-size: 2rem;
+  .job-titles .inner-container {
+    gap: 50px;
+  }
+  /* Skills - Heading with CTA */
+  .heading-with-cta {
+    align-items: flex-start;
+    padding: 0;
+    margin-bottom: auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .job-card .pagination {
+    position: absolute;
+    right: 50px;
+  }
+  .about .inner-container,
+  .job-titles .inner-container,
+  .skills .inner-container {
+    max-width: 800px;
   }
 }
 
@@ -655,7 +862,7 @@ h6 {
   }
   /* Job Cards */
   .job-card .percentage {
-    font-size: 2.5rem;
+    font-size: 4.5rem;
   }
 }
 
@@ -712,8 +919,18 @@ h6 {
   .designer-card {
     margin-top: 50px;
   }
-  .developer-card {
+  .strategist-card {
     margin-top: 100px;
+  }
+  .job-card .percentage {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1130px) {
+  .job-card .pagination {
+    position: absolute;
+    right: 50px;
   }
 }
 
@@ -731,5 +948,8 @@ h6 {
   }
   .skills .inner-container.large-gap {
     gap: 100px;
+  }
+  .job-card .percentage {
+    font-size: 2.5rem;
   }
 }

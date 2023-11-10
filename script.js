@@ -2,6 +2,7 @@ const mobileMenuBurger = document.getElementById("mobileMenuBurger");
 const mobileNavItems = document.getElementById("mobileMenuNavItems");
 const mobileSiteNav = document.getElementById("mobileMenuNav");
 const mobileMenuCloseBtn = document.getElementById("closeBtn");
+const dropDownArrowBtn = document.getElementById("dropDownArrowBtn");
 
 // Mobile Menu Nav Items - Adds Class to Mobile Menu Flyout For Smooth Transition
 
