@@ -713,10 +713,6 @@ h6 {
   gap: 50px;
 }
 
-.select-work .select-work-content.flex-column {
-  gap: 20px;
-}
-
 .select-work-content .select-work-heading h3 {
   font-size: 1rem;
   color: #ffffff;
@@ -1024,6 +1020,10 @@ h6 {
   .select-work-content .select-work-heading h3 {
     font-size: 1.5rem;
   }
+  .select-work-content {
+    width: calc(90% + 50px);
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1069,16 +1069,15 @@ h6 {
   .hexagon-statistic .hexagon-statistic-description {
     font-size: 0.75rem;
   }
+  /* Select Work */
   .select-work-content .select-work-heading h3 {
     font-size: 2.5rem;
   }
-  .grid-tablet {
-    display: grid;
-    grid-template-columns: 0.75fr 1fr;
+  .select-work-description.large-text p {
+    margin-bottom: 30px;
   }
-  .select-work .select-work-content.flex-column {
-    gap: 50px;
-    justify-content: center;
+  .select-work-content {
+    width: calc(85% + 50px);
   }
 }
 
@@ -1096,6 +1095,10 @@ h6 {
   }
   .flex-column-tablet {
     flex-direction: column;
+  }
+  /* Select Work */
+  .select-work .select-work-content.flex-column {
+    gap: 20px;
   }
 }
 
@@ -1148,21 +1151,21 @@ h6 {
   .hexagon-statistic .hexagon-statistic-description {
     font-size: 0.875em;
   }
-  /* Featured Work */
+  /* Grid Layout - Tablet */
+  .grid-tablet {
+    display: grid;
+    grid-template-columns: 0.75fr 1fr;
+  }
+  /* Select Work */
   .work .inner-container .outline-heading-large {
     margin: 0 0 -100px 20px;
   }
-  .select-work-content .select-work-heading h3 {
-    font-size: 3rem;
+  .select-work-content {
+    width: calc(100% + 50px);
+    max-width: 910px;
   }
-  .select-work-content .select-work-heading {
-    width: 40%;
-  }
-  .select-work-content .select-work-description {
-    width: 55%;
-  }
-  .select-work article:not(:last-child) {
-    margin-bottom: 120px;
+  .work .inner-container .select-work {
+    gap: 100px;
   }
 }
 
@@ -1200,29 +1203,20 @@ h6 {
     font-size: 1rem;
   }
   /* Select Work */
-  .select-work-content .select-work-heading h3 {
-    font-size: 3.5rem;
-  }
-  .select-work-content .select-work-heading {
-    width: 40%;
-  }
-  .select-work-content .select-work-description {
-    width: 45%;
-  }
   .select-work .flex-column {
     gap: 120px;
   }
   .select-work .select-work-content.flex-column {
     gap: 80px;
   }
+  .select-work-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 }
 
-@media screen and (min-width: 1400px) {
-  /* Select Work */
-  .select-work-content .select-work-heading h3 {
-    font-size: 4rem;
-  }
-  .select-work-content .select-work-heading {
-    width: 38%;
+@media screen and (min-width: 1500px) {
+  .select-work-content {
+    max-width: 1250px;
   }
 }
