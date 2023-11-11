@@ -372,6 +372,51 @@ footer {
   top: 0;
 }
 
+/* Statistics */
+
+.hexagon-statistic {
+  position: relative;
+}
+
+.hexagon-statistic figure {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  max-height: 1000px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hexagon-statistic img {
+  width: 100%;
+  height: auto;
+}
+
+.statistic-number {
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.hexagon-statistic .hexagon-statistic-description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  z-index: 10;
+}
+
+.hexagon-statistic.hexagon-white .hexagon-statistic-description {
+  color: #292929;
+}
+
 /* Text */
 
 p,
@@ -549,7 +594,7 @@ h6 {
   position: relative;
 }
 
-.image-separator-right .image-separator-bg:after {
+.image-separator-right .image-separator-bg::after {
   content: "";
   display: block;
   position: absolute;
@@ -561,7 +606,7 @@ h6 {
   z-index: -1;
 }
 
-.image-separator-left .image-separator-bg:after {
+.image-separator-left .image-separator-bg::after {
   content: "";
   display: block;
   position: absolute;
@@ -624,6 +669,68 @@ h6 {
   border-bottom: solid 1px #ffffff;
 }
 
+/* Select Work */
+
+.select-work .select-work-featured-img {
+  position: relative;
+}
+
+.select-work .select-work-featured-img img {
+  position: relative;
+  width: 100%;
+  max-height: 1000px;
+}
+
+.work .inner-container .outline-heading-large {
+  width: 50%;
+  padding-bottom: 0;
+  margin: 0 0 -65px 20px;
+  z-index: 20;
+}
+
+.work .inner-container .select-work article {
+  width: calc(100% - 20px);
+}
+
+.work .select-work-featured-img::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  width: 100%;
+  height: calc(100% - 10px);
+  border: solid 1px #22e52e;
+  z-index: -1;
+}
+
+.select-work .photo-attribution-right.vertical {
+  right: 0;
+  bottom: 60px;
+}
+
+.select-work .flex-column {
+  gap: 50px;
+}
+
+.select-work .select-work-content.flex-column {
+  gap: 20px;
+}
+
+.select-work-content .select-work-heading {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.5em;
+}
+
+.select-work-content {
+  width: calc(100% + 20px);
+}
+
+.select-work article {
+  margin-bottom: 50px;
+}
+
 /* Media Queries */
 
 @media screen and (min-width: 350px) {
@@ -642,7 +749,8 @@ h6 {
     width: 60px;
     height: 60px;
   }
-  .primary-h2 {
+  .primary-h2,
+  .job-card .percentage {
     font-size: 2rem;
   }
   /* Job Cards */
@@ -653,8 +761,18 @@ h6 {
   .job-card .pagination {
     font-size: 1rem;
   }
-  .job-card .percentage {
-    font-size: 2rem;
+  /* Statistics */
+  .statistic-number {
+    font-size: 2.5rem;
+  }
+  .hexagon-statistic .hexagon-statistic-description {
+    font-size: 0.875rem;
+  }
+  /* Select Work */
+  .select-work-content .select-work-heading {
+    font-size: 1.2rem;
+    color: #ffffff;
+    line-height: 1.5em;
   }
 }
 
@@ -668,6 +786,18 @@ h6 {
   }
   .job-card .pagination {
     right: 30px;
+  }
+  /* Select Work */
+  .work .inner-container .outline-heading-large {
+    width: 90%;
+    margin: 0 0 -65px 20px;
+  }
+  .work .inner-container .select-work article {
+    width: calc(100% - 50px);
+  }
+  /* Select Work */
+  .select-work-content .select-work-heading {
+    font-size: 1.5rem;
   }
 }
 
@@ -720,6 +850,17 @@ h6 {
   .job-card .pagination {
     right: 50px;
   }
+  /* Statistics */
+  .hexagon-statistic .hexagon-statistic-description {
+    font-size: 0.9rem;
+  }
+  /* Select Work */
+  .work .inner-container .outline-heading-large {
+    margin: 0 0 -70px 20px;
+  }
+  .select-work-content .select-work-heading {
+    font-size: 1.75rem;
+  }
 }
 
 @media screen and (min-width: 641px) {
@@ -739,6 +880,18 @@ h6 {
   .job-card .percentage {
     font-size: 4rem;
   }
+  /* Statistics */
+  .statistic-number {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+  .hexagon-statistic .hexagon-statistic-description {
+    font-size: 1rem;
+  }
+  /* Featured Work */
+  .work .inner-container .outline-heading-large {
+    margin: 0 0 -80px 20px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -753,8 +906,13 @@ h6 {
   }
   .about .inner-container,
   .job-titles .inner-container,
-  .skills .inner-container {
+  .skills .inner-container,
+  .hexagon-divider .inner-container {
     max-width: 600px;
+  }
+  /* Statistics */
+  .hexagon-divider .inner-container {
+    gap: 30px;
   }
 }
 
@@ -827,6 +985,44 @@ h6 {
     padding: 0;
     margin-bottom: auto;
   }
+  /* Statistics */
+  .statistic-number {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .hexagon-statistic .hexagon-statistic-description {
+    font-size: 0.75rem;
+  }
+  .hexagon-divider .inner-container {
+    gap: 0;
+  }
+  .hexagon-statistic.hexagon-green {
+    top: 100px;
+  }
+  .hexagon-statistic.hexagon-white {
+    top: 50px;
+  }
+  .hexagon-divider {
+    margin-bottom: 100px;
+  }
+  /* Flex Row - Tablet */
+  .flex-row-tablet {
+    flex-direction: row;
+  }
+  /* Featured Work */
+  .work .inner-container .outline-heading-large {
+    margin: 0 0 -90px 20px;
+  }
+  .select-work .select-work-content.flex-column {
+    gap: 50px;
+    justify-content: center;
+  }
+  .select-work .flex-column {
+    gap: 60px;
+  }
+  .select-work article {
+    margin-bottom: 80px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -863,6 +1059,17 @@ h6 {
   /* Job Cards */
   .job-card .percentage {
     font-size: 4.5rem;
+  }
+  /* Statistics */
+  .statistic-number {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .hexagon-statistic .hexagon-statistic-description {
+    font-size: 0.75rem;
+  }
+  .select-work-content .select-work-heading {
+    font-size: 2.5rem;
   }
 }
 
@@ -925,6 +1132,27 @@ h6 {
   .job-card .percentage {
     font-size: 2rem;
   }
+  /* Statistics */
+  .statistic-number {
+    font-size: 2.5rem;
+  }
+  .hexagon-statistic .hexagon-statistic-description {
+    font-size: 0.875em;
+  }
+  /* Featured Work */
+  .work .inner-container .outline-heading-large {
+    margin: 0 0 -100px 20px;
+  }
+  .select-work-content .select-work-heading {
+    font-size: 3rem;
+    width: 40%;
+  }
+  .select-work-content .select-work-description {
+    width: 55%;
+  }
+  .select-work article {
+    margin-bottom: 100px;
+  }
 }
 
 @media screen and (min-width: 1130px) {
@@ -951,5 +1179,32 @@ h6 {
   }
   .job-card .percentage {
     font-size: 2.5rem;
+  }
+  /* Statistics */
+  .statistic-number {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+  .hexagon-statistic .hexagon-statistic-description {
+    font-size: 1rem;
+  }
+  /* Select Work */
+  .select-work-content .select-work-heading {
+    font-size: 3.5rem;
+    width: 40%;
+  }
+  .select-work-content .select-work-description {
+    width: 45%;
+  }
+  .select-work .flex-column {
+    gap: 80px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  /* Select Work */
+  .select-work-content .select-work-heading {
+    font-size: 4rem;
+    width: 38%;
   }
 }
