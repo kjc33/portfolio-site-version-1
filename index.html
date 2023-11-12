@@ -54,7 +54,7 @@
                   <a href="#work">Work</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#contact">Say Hello</a>
+                  <a href="#contact">Hire Me</a>
                 </li>
               </ul>
             </div>
@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="cta" id="menuBtn">
-          <a class="primary-nav-cta-btn" id="primary-nav-cta-btn" href="#contact">Say Hello</a>
+          <a class="primary-nav-cta-btn" id="primary-nav-cta-btn" href="#contact">Hire Me</a>
         </div>
       </div>
     </header>
@@ -95,9 +95,10 @@
             <figure>
               <img src="./images/values-exercise.jpg" alt="Kyle Chin Participating in Business Values and Strategy Exercise" width="1440" height="auto" />
             </figure>
-          </div>
-          <div class="photo-attribution-left vertical flex-column">
-            <p>Photo by <a href="https://www.arieljordanphoto.com/" target="_blank">Ariel Jordan</a></p>
+
+            <div class="photo-attribution-left vertical flex-column">
+              <p>Photo by <a href="https://www.arieljordanphoto.com/" target="_blank">Ariel Jordan</a></p>
+            </div>
           </div>
         </div>
       </section>
@@ -138,12 +139,13 @@
             <figure>
               <img src="./images/business-strategy.jpg" alt="Whiteboard Website Strategy Session" width="1440" height="auto" />
             </figure>
-          </div>
-          <div class="photo-attribution-right vertical flex-column">
-            <p>
-              Photo by <a href="https://unsplash.com/@kaleidico?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Kaleidico</a> on
-              <a href="https://unsplash.com/photos/two-people-drawing-on-whiteboard-26MJGnCM0Wc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>
-            </p>
+
+            <div class="photo-attribution-right vertical flex-column">
+              <p>
+                Photo by <a href="https://unsplash.com/@kaleidico?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Kaleidico</a> on
+                <a href="https://unsplash.com/photos/two-people-drawing-on-whiteboard-26MJGnCM0Wc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -196,7 +198,7 @@
           </div>
         </div>
       </section>
-      <section class="work" id="work">
+      <section class="work no-bottom-padding" id="work">
         <div class="inner-container max-width flex-column large-gap">
           <h2 class="outline-heading-large">Work</h2>
           <div class="select-work flex-column">
@@ -282,6 +284,39 @@
                 </div>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+      <section class="quote no-bottom-padding">
+        <div class="inner-container max-width">
+          <div class="quote-body flex-column large-gap">
+            <p class="outline-text-large">"Kyle is extremely organized, professional, and a master at his craft. From <span class="green-accent">front-end development</span> to design, Kyle is an asset to any team and a genuine pleasure to work with!"</p>
+            <div class="quote-attribution light-font">
+              <p>Steven Howsley, Marketing Analyst, REI</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="inner-container small-width flex-column small-gap">
+          <div class="heading-and-description flex-column small-gap">
+            <h2 class="primary-h2 white">Hire Me</h2>
+            <div class="large-text underline-link">
+              <p>If you're interested in starting a website project, please fill out the form below with your project requirements and completed <a href="./docs/company-name-discovery-questionnaire.docx" target="_blank">discovery questionnaire</a>.</p>
+            </div>
+          </div>
+          <div class="form-wrapper small-gap">
+            <form action="thank-you.html" method="post" class="contact-form display-grid" id="contact">
+              <input type="text" name="first-name" id="firstName" placeholder="First Name" required />
+              <input type="text" name="last-name" id="lastName" placeholder="Last Name" required />
+              <input type="email" name="email" id="email" placeholder="Email" required />
+              <input type="tel" name="phone" id="phone" placeholder="Phone" />
+              <input type="url" name="website" id="website" placeholder="Website" />
+              <textarea name="message" id="message" cols="30" rows="10" placeholder="Tell me about your website goals, budget, and anything other pertinent details."></textarea>
+              <label for="file-upload">Completed Discovery Questionnaire</label>
+              <input type="file" name="file-upload" id="file-upload" required />
+              <input type="submit" value="Submit" />
+            </form>
           </div>
         </div>
       </section>
