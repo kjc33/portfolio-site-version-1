@@ -1024,11 +1024,16 @@ input[type="file"] {
   /* Contact Form */
   form label,
   form textarea,
-  form [type="url"],
-  form [type="submit"] {
+  form [type="url"] {
     grid-column-start: 1;
     grid-column-end: 3;
   }
+  
+  form [type="submit"] {
+    width: 100%;
+    max-width: 175px;
+  }
+
   form {
     grid-template-columns: 1fr 1fr;
   }
