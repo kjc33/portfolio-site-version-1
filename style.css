@@ -578,7 +578,6 @@ h6 {
 .image-separator-right .inner-container .image-separator-bg img {
   width: 100%;
   height: auto;
-  max-height: 850px;
 }
 
 .image-separator-bg {
@@ -731,7 +730,7 @@ h6 {
 
 .select-work .select-work-featured-img img {
   width: 100%;
-  max-height: 1000px;
+  height: auto;
 }
 
 .work .inner-container .outline-heading-large {
