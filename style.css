@@ -451,6 +451,7 @@ h6 {
 }
 
 .hero-subhead {
+  text-transform: uppercase;
   padding-bottom: 30px;
 }
 
@@ -470,7 +471,6 @@ h6 {
 .hero-subhead .light-font {
   font-size: 0.75rem;
   font-weight: 200;
-  text-transform: uppercase;
   color: #22e52e;
 }
 
@@ -752,15 +752,37 @@ h6 {
 
 /* Select Work */
 
-.select-work .select-work-featured-img,
-.select-work .select-work-featured-img img,
-.select-work article {
-  position: relative;
+.select-work .select-work-featured-bg {
+  width: 100%;
+  height: 325px;
 }
 
-.select-work .select-work-featured-img img {
-  width: 100%;
-  height: auto;
+.select-work-featured-bg.project-1 {
+  background-image: url(./images/snowboarder.jpg);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.select-work-featured-bg.project-2 {
+  background-image: url(./images/home-exterior.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.select-work-featured-bg.project-3 {
+  background-image: url(./images/weight-training.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.select-work-featured-bg.project-1,
+.select-work-featured-bg.project-2,
+.select-work-featured-bg.project-3,
+.select-work article {
+  position: relative;
 }
 
 .work .inner-container .outline-heading-large {
@@ -778,14 +800,14 @@ h6 {
   width: calc(100% - 20px);
 }
 
-.work .select-work-featured-img::after {
+.work .select-work-featured-bg::after {
   content: "";
   display: block;
   position: absolute;
   top: 20px;
   right: -20px;
   width: 100%;
-  height: calc(100% - 5px);
+  height: calc(100% - 3px);
   border: solid 1px #22e52e;
   z-index: -1;
 }
@@ -925,6 +947,9 @@ input[type="file"] {
     font-size: 0.875rem;
   }
   /* Select Work */
+  .select-work .select-work-featured-bg {
+    height: 380px;
+  }
   .select-work-content .select-work-heading h3 {
     font-size: 1.2rem;
     color: #ffffff;
@@ -1011,7 +1036,7 @@ input[type="file"] {
   .custom-list li:not(:last-child) {
     padding-bottom: 30px;
   }
-  /* Image Separators */
+  /* Image Separators*/
   .image-separator-right .inner-container .image-separator-bg,
   .image-separator-left .inner-container .image-separator-bg {
     height: 380px;
@@ -1066,9 +1091,10 @@ input[type="file"] {
   .job-card .percentage {
     font-size: 4rem;
   }
-  /* Image Separators */
+  /* Image Separators & Select Work */
   .image-separator-right .inner-container .image-separator-bg,
-  .image-separator-left .inner-container .image-separator-bg {
+  .image-separator-left .inner-container .image-separator-bg,
+  .select-work .select-work-featured-bg {
     height: 480px;
   }
   /* Statistics */
@@ -1189,9 +1215,10 @@ input[type="file"] {
     padding: 0;
     margin-bottom: auto;
   }
-  /* Image Separators */
+  /* Image Separators & Select Work*/
   .image-separator-right .inner-container .image-separator-bg,
-  .image-separator-left .inner-container .image-separator-bg {
+  .image-separator-left .inner-container .image-separator-bg,
+  .select-work .select-work-featured-bg {
     height: 515px;
   }
   /* Statistics */
@@ -1284,9 +1311,10 @@ input[type="file"] {
   .custom-list li::before {
     top: 12px;
   }
-  /* Image Separators */
+  /* Image Separators & Select Work*/
   .image-separator-right .inner-container .image-separator-bg,
-  .image-separator-left .inner-container .image-separator-bg {
+  .image-separator-left .inner-container .image-separator-bg,
+  .select-work .select-work-featured-bg {
     height: 600px;
   }
   /* Job Cards */
@@ -1395,6 +1423,9 @@ input[type="file"] {
     grid-template-columns: 0.75fr 1fr;
   }
   /* Select Work */
+  .select-work .select-work-featured-bg {
+    height: 700px;
+  }
   .work .inner-container .outline-heading-large {
     margin: 0 0 -100px 20px;
   }
@@ -1485,6 +1516,9 @@ input[type="file"] {
     font-size: 1rem;
   }
   /* Select Work */
+  .select-work .select-work-featured-bg {
+    height: 800px;
+  }
   .select-work .flex-column {
     gap: 120px;
   }
@@ -1519,7 +1553,11 @@ input[type="file"] {
   .image-separator-right .inner-container .image-separator-bg,
   .image-separator-left .inner-container .image-separator-bg {
     height: 850px;
-  }  
+  }
+  /* Select Work */
+  .select-work .select-work-featured-bg {
+    height: 950px;
+  }
 }
 
 @media screen and (min-width: 1500px) {
