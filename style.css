@@ -885,6 +885,7 @@ textarea {
 form [type="submit"] {
   font-size: 1rem;
   text-transform: uppercase;
+  letter-spacing: 2px;
   background-color: transparent;
   color: #22e52e;
   border: solid 2px #22e52e;
