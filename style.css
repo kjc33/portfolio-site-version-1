@@ -349,16 +349,16 @@ footer {
   flex-wrap: wrap;
 }
 
-.large-gap {
-  gap: 50px;
-}
-
 .small-gap {
   gap: 30px;
 }
 
 .x-small-gap {
   gap: 20px;
+}
+
+.large-gap {
+  gap: 50px;
 }
 
 .max-width {
@@ -480,12 +480,12 @@ h6 {
 }
 
 .photo-attribution-left.vertical {
-  left: -50px;
+  left: -48px;
   right: unset;
 }
 
 .photo-attribution-right.vertical {
-  right: -50px;
+  right: -48px;
   left: unset;
 }
 
@@ -559,10 +559,8 @@ h6 {
 
 .image-separator-right,
 .image-separator-left {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
-
-/* Image Separator */
 
 .image-separator-right .inner-container {
   width: 79%;
@@ -574,14 +572,32 @@ h6 {
   margin-right: auto;
 }
 
-.image-separator-left .inner-container .image-separator-bg img,
-.image-separator-right .inner-container .image-separator-bg img {
+.image-separator-right .inner-container .image-separator-bg,
+.image-separator-left .inner-container .image-separator-bg {
+  position: relative;
   width: 100%;
-  height: auto;
+  height: 325px;
 }
 
-.image-separator-bg {
-  position: relative;
+.image-separator-right.hero-separator .inner-container .image-separator-bg {
+  background-image: url(./images/values-exercise.jpg);
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+
+.image-separator-left.about-separator .inner-container .image-separator-bg {
+  background-image: url(./images/business-strategy.jpg);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.image-separator-right.quote-separator .inner-container .image-separator-bg {
+  background-image: url(./images/kyle-headshot.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .image-separator-right .image-separator-bg::after {
@@ -591,7 +607,7 @@ h6 {
   top: 20px;
   left: -20px;
   width: 100%;
-  height: calc(100% - 10px);
+  height: calc(100% - 3px);
   border: solid 1px #22e52e;
   z-index: -1;
 }
@@ -603,7 +619,7 @@ h6 {
   top: 20px;
   right: -20px;
   width: 100%;
-  height: calc(100% - 10px);
+  height: calc(100% - 3px);
   border: solid 1px #22e52e;
   z-index: -1;
 }
@@ -626,11 +642,7 @@ h6 {
 
 /* Statistics */
 
-.hexagon-statistic {
-  position: relative;
-}
-
-.hexagon-statistic figure {
+.hexagon-statistic-bg {
   position: relative;
   width: 100%;
   max-width: 1000px;
@@ -640,7 +652,7 @@ h6 {
   overflow: hidden;
 }
 
-.hexagon-statistic img {
+.hexagon-statistic-bg img {
   width: 100%;
   height: auto;
 }
@@ -652,7 +664,7 @@ h6 {
   margin-bottom: 20px;
 }
 
-.hexagon-statistic .hexagon-statistic-description {
+.hexagon-statistic-bg .hexagon-statistic-description {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -665,7 +677,7 @@ h6 {
   z-index: 10;
 }
 
-.hexagon-statistic.hexagon-white .hexagon-statistic-description {
+.hexagon-statistic-bg.hexagon-white .hexagon-statistic-description {
   color: #292929;
 }
 
@@ -808,7 +820,6 @@ h6 {
 
 .heading-and-description .primary-h2 {
   padding-bottom: 0;
-  width: 90%;
 }
 
 .contact-form {
@@ -892,7 +903,7 @@ input[type="file"] {
   .statistic-number {
     font-size: 2.5rem;
   }
-  .hexagon-statistic .hexagon-statistic-description {
+  .hexagon-statistic-bg .hexagon-statistic-description {
     font-size: 0.875rem;
   }
   /* Select Work */
@@ -982,6 +993,11 @@ input[type="file"] {
   .custom-list li:not(:last-child) {
     padding-bottom: 30px;
   }
+  /* Image Separators */
+  .image-separator-right .inner-container .image-separator-bg,
+  .image-separator-left .inner-container .image-separator-bg {
+    height: 380px;
+  }  
   /* Job Cards */
   .job-card .percentage {
     font-size: 3rem;
@@ -994,7 +1010,7 @@ input[type="file"] {
     right: 50px;
   }
   /* Statistics */
-  .hexagon-statistic .hexagon-statistic-description {
+  .hexagon-statistic-bg .hexagon-statistic-description {
     font-size: 0.9rem;
   }
   /* Select Work & Quote*/
@@ -1032,12 +1048,17 @@ input[type="file"] {
   .job-card .percentage {
     font-size: 4rem;
   }
+  /* Image Separators */
+  .image-separator-right .inner-container .image-separator-bg,
+  .image-separator-left .inner-container .image-separator-bg {
+    height: 480px;
+  }
   /* Statistics */
   .statistic-number {
     font-size: 3rem;
     margin-bottom: 30px;
   }
-  .hexagon-statistic .hexagon-statistic-description {
+  .hexagon-statistic-bg .hexagon-statistic-description {
     font-size: 1rem;
   }
   /* Select Work */
@@ -1150,21 +1171,26 @@ input[type="file"] {
     padding: 0;
     margin-bottom: auto;
   }
+  /* Image Separators */
+  .image-separator-right .inner-container .image-separator-bg,
+  .image-separator-left .inner-container .image-separator-bg {
+    height: 515px;
+  }
   /* Statistics */
   .statistic-number {
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
-  .hexagon-statistic .hexagon-statistic-description {
+  .hexagon-statistic-bg .hexagon-statistic-description {
     font-size: 0.75rem;
   }
   .hexagon-divider .inner-container {
     gap: 0;
   }
-  .hexagon-statistic.hexagon-green {
+  .hexagon-statistic-bg.hexagon-green {
     top: 100px;
   }
-  .hexagon-statistic.hexagon-white {
+  .hexagon-statistic-bg.hexagon-white {
     top: 50px;
   }
   .hexagon-divider {
@@ -1237,6 +1263,11 @@ input[type="file"] {
   .large-text p {
     font-size: 1.4rem;
   }
+  /* Image Separators */
+  .image-separator-right .inner-container .image-separator-bg,
+  .image-separator-left .inner-container .image-separator-bg {
+    height: 600px;
+  }
   /* Job Cards */
   .job-card .percentage {
     font-size: 4.5rem;
@@ -1246,7 +1277,7 @@ input[type="file"] {
     font-size: 2rem;
     margin-bottom: 20px;
   }
-  .hexagon-statistic .hexagon-statistic-description {
+  .hexagon-statistic-bg .hexagon-statistic-description {
     font-size: 0.75rem;
   }
   /* Select Work */
@@ -1330,7 +1361,7 @@ input[type="file"] {
   .statistic-number {
     font-size: 2.5rem;
   }
-  .hexagon-statistic .hexagon-statistic-description {
+  .hexagon-statistic-bg .hexagon-statistic-description {
     font-size: 0.875em;
   }
   /* Grid Layout - Tablet */
@@ -1369,19 +1400,25 @@ input[type="file"] {
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
-    /* Contact Form*/
-    .contact .inner-container .heading-and-description {
-      flex: 1;
-    }
-    .contact .inner-container .form-wrapper {
-      flex: 1;
-    }
+  /* Contact Form*/
+  .contact .inner-container .heading-and-description {
+    flex: 1;
+  }
+  .contact .inner-container .form-wrapper {
+    flex: 1;
+  }
 }
 
 @media screen and (min-width: 1130px) {
   .job-card .pagination {
     position: absolute;
     right: 50px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .x-large-gap {
+    gap: 50px;
   }
 }
 
@@ -1404,12 +1441,17 @@ input[type="file"] {
   .job-card .percentage {
     font-size: 2.5rem;
   }
+  /* Image Separators */
+  .image-separator-right .inner-container .image-separator-bg,
+  .image-separator-left .inner-container .image-separator-bg {
+    height: 700px;
+  }  
   /* Statistics */
   .statistic-number {
     font-size: 3rem;
     margin-bottom: 30px;
   }
-  .hexagon-statistic .hexagon-statistic-description {
+  .hexagon-statistic-bg .hexagon-statistic-description {
     font-size: 1rem;
   }
   /* Select Work */
@@ -1430,6 +1472,9 @@ input[type="file"] {
 }
 
 @media screen and (min-width: 1201px) {
+  .x-large-gap {
+    gap: 80px;
+  }
   /* Contact Form*/
   .contact .inner-container .heading-and-description {
     flex: 0.45;
@@ -1437,6 +1482,14 @@ input[type="file"] {
   .contact .inner-container .form-wrapper {
     flex: 0.55;
   }
+}
+
+@media screen and (min-width: 1400px) {
+  /* Image Separators */
+  .image-separator-right .inner-container .image-separator-bg,
+  .image-separator-left .inner-container .image-separator-bg {
+    height: 850px;
+  }  
 }
 
 @media screen and (min-width: 1500px) {
