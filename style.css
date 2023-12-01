@@ -176,7 +176,7 @@ html {
 
 .mobile-menu-nav .mobile-menu-nav-items .mobile-menu-nav-list-items .nav-item a:hover,
 .mobile-menu-nav .mobile-menu-nav-items .close-btn:hover .fa-solid.fa-xmark {
-  color: #000000;
+  color: #ffffff;
 }
 
 .mobile-menu-nav-items .mobile-menu-nav-list-items {
@@ -255,9 +255,28 @@ footer {
   position: relative;
 }
 
-.custom-list li {
+.custom-list {
   list-style-type: none;
-  line-height: 1.5em;
+}
+
+.custom-list li {
+  position: relative;
+  line-height: 1.75em;
+  padding-left: 35px;
+}
+
+.custom-list li::before  {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 9px;
+  left: 0;
+  background-image: url('./images/hexagon-white.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 15px;
+  height: 15px;
+  overflow: visible;
 }
 
 .custom-list li:not(:last-child) {
@@ -633,7 +652,6 @@ h6 {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  padding-bottom: 30px;
 }
 
 .heading-with-cta .primary-h2 {
@@ -1086,7 +1104,7 @@ input[type="file"] {
     flex-direction: column;
   }
   .skills .large-gap {
-    gap: 0;
+    gap: 30px;
   }
   .job-titles .large-gap {
     gap: 30px;
@@ -1243,7 +1261,7 @@ input[type="file"] {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (max-width: 1199px) {
   .skills-list.large-gap {
     gap: 30px;
   }
@@ -1262,6 +1280,9 @@ input[type="file"] {
   .skills-list .custom-list li,
   .large-text p {
     font-size: 1.4rem;
+  }
+  .custom-list li::before {
+    top: 12px;
   }
   /* Image Separators */
   .image-separator-right .inner-container .image-separator-bg,
@@ -1348,6 +1369,10 @@ input[type="file"] {
   .large-text p {
     font-size: 1.5rem;
   }
+  .custom-list li::before {
+    top: 13px;
+  }
+  /* Cards */
   .designer-card {
     margin-top: 50px;
   }
@@ -1428,6 +1453,11 @@ input[type="file"] {
     font-size: 8rem;
   }
   /* Skills List */
+  .custom-list li::before {
+    top: 15px;
+    width: 17px;
+    height: 17px;
+  }
   .skills-list .custom-list li,
   .large-text p {
     font-size: 1.75rem;
