@@ -1278,14 +1278,17 @@ input[type="file"] {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Job Cards */
   .job-card .pagination {
     position: absolute;
     right: 50px;
   }
   .about .inner-container,
-  .job-titles .inner-container,
   .skills .inner-container {
     max-width: 800px;
+  }
+  .job-titles .inner-container{
+    max-width: 650px;
   }
 }
 
@@ -1457,6 +1460,10 @@ input[type="file"] {
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
+  /* Job Cards */
+  .job-card {
+    padding: 30px;
+  }
   /* Contact Form*/
   .contact .inner-container .heading-and-description {
     flex: 1;
