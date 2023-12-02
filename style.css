@@ -664,20 +664,18 @@ h6 {
 
 /* Statistics */
 
-.hexagon-statistic-bg {
-  position: relative;
-  width: 466px;
-  max-width: 100%;
-  height: 404px;
-  max-height: 100%;
-  text-align: center;
+.hexagon-divider .inner-container {
+  align-items: center;
 }
 
-.hexagon-statistic-bg.hexagon-green {
-  background-image: url(./images/hexagon-green-border.svg);
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
+.hexagon-statistic-bg {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 600px;
+  text-align: center;
+  overflow: hidden;
 }
 
 .hexagon-statistic-bg img {
@@ -1061,6 +1059,10 @@ input[type="file"] {
     right: 50px;
   }
   /* Statistics */
+  .statistic-number {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
   .hexagon-statistic-bg .hexagon-statistic-description {
     font-size: 0.9rem;
   }
@@ -1110,7 +1112,7 @@ input[type="file"] {
   }
   /* Statistics */
   .statistic-number {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 30px;
   }
   .hexagon-statistic-bg .hexagon-statistic-description {
@@ -1238,27 +1240,10 @@ input[type="file"] {
   }
   /* Statistics */
   .statistic-number {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-size: 4.5rem;
   }
   .hexagon-statistic-bg .hexagon-statistic-description {
-    font-size: 0.75rem;
-  }
-  .hexagon-divider .inner-container {
-    gap: 0;
-  }
-  .hexagon-statistic-bg.hexagon-green {
-    top: 100px;
-  }
-  .hexagon-statistic-bg.hexagon-white {
-    top: 50px;
-  }
-  .hexagon-divider {
-    margin-bottom: 100px;
-  }
-  /* Flex Row - Tablet */
-  .flex-row-tablet {
-    flex-direction: row;
+    font-size: 1.25rem;
   }
   /* Select Work */
   .work .inner-container .outline-heading-large {
@@ -1337,11 +1322,6 @@ input[type="file"] {
   .job-card .percentage {
     font-size: 4.5rem;
   }
-  /* Statistics */
-  .statistic-number {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
   /* Select Work */
   .select-work-content .select-work-heading h3 {
     font-size: 2.5rem;
@@ -1362,6 +1342,32 @@ input[type="file"] {
   /* Job Cards */
   .job-card {
     min-height: 420px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  /* Statistics */
+  .hexagon-divider .inner-container {
+    gap: 0;
+  }
+  .hexagon-statistic-bg.hexagon-green {
+    top: 100px;
+  }
+  .hexagon-statistic-bg.hexagon-white {
+    top: 50px;
+  }
+  .hexagon-divider {
+    margin-bottom: 100px;
+  }
+  .statistic-number {
+    font-size: 3.25rem;
+  }
+  .hexagon-statistic-bg .hexagon-statistic-description {
+    font-size: 0.9rem;
+  }
+  /* Flex Row - Tablet */
+  .flex-row-tablet {
+    flex-direction: row;
   }
 }
 
@@ -1436,7 +1442,7 @@ input[type="file"] {
   }
   /* Statistics */
   .statistic-number {
-    font-size: 2.5rem;
+    font-size: 3.75rem;
   }
   .hexagon-statistic-bg .hexagon-statistic-description {
     font-size: 0.875em;
@@ -1537,8 +1543,7 @@ input[type="file"] {
   }
   /* Statistics */
   .statistic-number {
-    font-size: 3rem;
-    margin-bottom: 30px;
+    font-size: 4rem;
   }
   .hexagon-statistic-bg .hexagon-statistic-description {
     font-size: 1rem;
