@@ -265,13 +265,13 @@ footer {
   padding-left: 35px;
 }
 
-.custom-list li::before  {
-  content: '';
+.custom-list li::before {
+  content: "";
   display: inline-block;
   position: absolute;
   top: 9px;
   left: 0;
-  background-image: url('./images/hexagon-white.svg');
+  background-image: url("./images/hexagon-white.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 15px;
@@ -350,6 +350,10 @@ footer {
 
 .align-center {
   align-items: center;
+}
+
+.align-top {
+  align-items: flex-start;
 }
 
 .justify-center {
@@ -662,12 +666,18 @@ h6 {
 
 .hexagon-statistic-bg {
   position: relative;
-  width: 100%;
-  max-width: 1000px;
-  height: 100%;
-  max-height: 1000px;
+  width: 466px;
+  max-width: 100%;
+  height: 404px;
+  max-height: 100%;
   text-align: center;
-  overflow: hidden;
+}
+
+.hexagon-statistic-bg.hexagon-green {
+  background-image: url(./images/hexagon-green-border.svg);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .hexagon-statistic-bg img {
@@ -705,7 +715,7 @@ h6 {
   position: relative;
   flex: 1;
   justify-content: space-between;
-  height: 350px;
+  min-height: 280px;
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 20px;
   padding: 30px;
@@ -967,9 +977,6 @@ input[type="file"] {
   .vertical {
     display: flex;
   }
-  .job-card {
-    min-height: 200px;
-  }
   .job-card .pagination {
     right: 30px;
   }
@@ -1041,13 +1048,13 @@ input[type="file"] {
   .image-separator-right .inner-container .image-separator-bg,
   .image-separator-left .inner-container .image-separator-bg {
     height: 380px;
-  }  
+  }
   /* Job Cards */
   .job-card .percentage {
     font-size: 3rem;
   }
   .job-card {
-    min-height: 275px;
+    min-height: 300px;
     padding: 50px;
   }
   .job-card .pagination {
@@ -1089,6 +1096,9 @@ input[type="file"] {
     font-size: 0.875rem;
   }
   /* Job Cards */
+  .job-card {
+    min-height: 320px;
+  }
   .job-card .percentage {
     font-size: 4rem;
   }
@@ -1208,6 +1218,10 @@ input[type="file"] {
   .skills .inner-container.large-gap {
     gap: 80px;
   }
+  /* Job Cards */
+  .job-card {
+    min-height: 380px;
+  }
   .job-titles .inner-container {
     gap: 50px;
   }
@@ -1284,11 +1298,9 @@ input[type="file"] {
     right: 50px;
   }
   .about .inner-container,
+  .job-titles .inner-container,
   .skills .inner-container {
     max-width: 800px;
-  }
-  .job-titles .inner-container{
-    max-width: 650px;
   }
 }
 
@@ -1330,9 +1342,6 @@ input[type="file"] {
     font-size: 2rem;
     margin-bottom: 20px;
   }
-  .hexagon-statistic-bg .hexagon-statistic-description {
-    font-size: 0.75rem;
-  }
   /* Select Work */
   .select-work-content .select-work-heading h3 {
     font-size: 2.5rem;
@@ -1346,6 +1355,13 @@ input[type="file"] {
   /* Quote Heading */
   .quote-body .outline-text-large {
     font-size: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 880px) and (max-width: 1024px) {
+  /* Job Cards */
+  .job-card {
+    min-height: 420px;
   }
 }
 
@@ -1405,11 +1421,15 @@ input[type="file"] {
     top: 13px;
   }
   /* Cards */
+  .job-titles .inner-container {
+    align-items: flex-start;
+    margin-bottom: 100px;
+  }
   .designer-card {
-    margin-top: 50px;
+    top: 50px;
   }
   .strategist-card {
-    margin-top: 100px;
+    top: 100px;
   }
   .job-card .percentage {
     font-size: 2rem;
@@ -1514,7 +1534,7 @@ input[type="file"] {
   .image-separator-right .inner-container .image-separator-bg,
   .image-separator-left .inner-container .image-separator-bg {
     height: 700px;
-  }  
+  }
   /* Statistics */
   .statistic-number {
     font-size: 3rem;
