@@ -918,6 +918,12 @@ input[type="file"] {
   cursor: pointer;
 }
 
+/* Footer */
+
+.primary-footer {
+  border-top: solid 1px rgba(250, 250, 250, 0.2);
+}
+
 /* Media Queries */
 
 @media screen and (min-width: 350px) {
