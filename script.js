@@ -32,6 +32,7 @@ function displayMobileMenu() {
 // Hides Mobile Menu Flyout on Close Button Click
 
 mobileMenuCloseBtn.addEventListener("click", closeMobileMenu);
+mobileMenuNavItems.addEventListener("click", closeMobileMenu);
 
 function closeMobileMenu() {
   if (window.innerWidth <= 1024) {
@@ -39,5 +40,12 @@ function closeMobileMenu() {
     if (mobileNavItems) {
       mobileNavItems.style.display = "none";
     }
+    if (mobileSiteNav) {
+      mobileNavItems.style.display = "none";
+    }
   }
 }
+
+// Copyright Date
+
+document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
