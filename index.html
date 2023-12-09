@@ -69,7 +69,7 @@
       </div>
     </header>
     <main>
-      <section class="hero">
+      <section class="hero" id="top">
         <div class="inner-container max-width flex-column">
           <h1 class="outline-heading-large">Frontend Developer</h1>
           <div class="hero-subhead">
@@ -171,7 +171,7 @@
           </div>
         </div>
       </section>
-      <section class="hexagon-divider no-bottom-padding">
+      <div class="hexagon-divider no-bottom-padding">
         <div class="inner-container large-width flex-column flex-row-tablet large-gap">
           <div class="hexagon-statistic-bg hexagon-green">
             <figure>
@@ -192,7 +192,7 @@
             </figure>
           </div>
         </div>
-      </section>
+      </div>
       <section class="work no-bottom-padding" id="work">
         <div class="inner-container max-width flex-column large-gap">
           <h2 class="outline-heading-large">Work</h2>
@@ -272,7 +272,7 @@
           </div>
         </div>
       </section>
-      <section class="quote">
+      <div class="quote">
         <div class="inner-container max-width">
           <div class="quote-body flex-column large-gap">
             <p class="outline-text-large">"Kyle is extremely organized, professional, and a master at his craft. From <span class="green-accent">frontend development</span> to design, Kyle is an asset to any team and a genuine pleasure to work with!"</p>
@@ -281,7 +281,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
       <div class="image-separator-right quote-separator">
         <div class="inner-container">
           <div class="image-separator-bg">
@@ -314,12 +314,40 @@
       </section>
       <script src="script.js"></script>
       <footer class="primary-footer">
-        <div class="inner-container max-width flex-row large-gap">
-          <div class="top-half">
-
+        <div class="inner-container max-width flex flex-column large-gap">
+          <div class="top-half full-width flex flex-row flex-wrap justify-space-between large-gap">
+            <div class="footer-logo flex flex-column">
+              <figure>
+                <a href="#top"><img src="./images/hexagon-green.svg" alt="Green Hexagon" width="100" height="100" /></a>
+              </figure>
+              <p class="footer-tagline">Developer. Designer. Strategist.</p>
+            </div>
+            <div class="footer-navigation flex flex-row">
+              <nav class="primary-footer-nav">
+                <ul class="flex flex-row flex-wrap x-small-gap">
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#skills">Skills</a></li>
+                  <li><a href="#work">Work</a></li>
+                  <li><a href="#contact">Hire Me</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="social-icons full-width flex flex-row x-small-gap">
+              <div class="footer-social-icon github">
+                <a href="https://github.com/kjc33" target="_blank"><i class="fa-brands fa-github"></i></a>
+              </div>
+              <div class="footer-social-icon linkedin">
+                <a href="https://www.linkedin.com/in/kylechin/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
           </div>
-          <div class="bottom-half">
-
+          <div class="bottom-half flex flex-column large-gap">
+            <div class="footer-signature underline-link">
+              <p>I make every effort to ensure my portfolio is accessible to everyone. If you're having trouble using any part of my website, please don't hesitate to <a href="#contact">contact</a> me, and I will do my best to address the issue. Thank you for your understanding.</p>
+            </div>
+            <div class="accessibility-disclaimer">
+              <p>&copy; 2023 Kyle John Chin. <span>|</span> Website by me, duh.</p>
+            </div>
           </div>
         </div>
       </footer>
